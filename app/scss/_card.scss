@@ -1,0 +1,82 @@
+.card {
+    max-width: 327px;
+    margin-top: 148px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+    border-radius: 23px;
+    padding: 132px 24px 48px 24px;
+
+    &__hero {
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+        top: -241px;
+        right: 19px;
+    }
+
+    &__imgShadow {
+        position: absolute;
+        top: -132px;
+        right: 19px;
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 700;
+        padding-bottom: 11px;
+    }
+
+    &__list {
+        text-align: left;
+    }
+
+    &__listItem {
+        border-bottom: 1px solid $lightGrayishBlue;
+        padding-top: 19px;
+        padding-bottom: 19px;
+    }
+
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $veryDarkGrayishBlue;
+        font-size: 13px;
+        line-height: 13px;
+        transition: font-weight 150ms ease-in-out;
+
+        &:hover {
+            font-weight: 700;
+        }
+
+        svg {
+            transition: all 400ms ease-in-out;
+        }
+    }
+
+    &__arrow {
+        justify-self: flex-end;
+    }
+
+    &__answer {
+        color: $darkGrayishBlue;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 400ms ease-in-out;
+    }
+}
+
+.active {
+    transform: rotate(180deg);
+}
+
+.show {
+    padding-top: 12px;
+}
