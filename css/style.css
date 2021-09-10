@@ -2,6 +2,7 @@ html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  min-height: 100%;
 }
 
 *,
@@ -12,15 +13,14 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 1.5rem 5.3125rem 1.5rem;
   padding: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   font-family: "Kumbh Sans", sans-serif;
   background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
   background: linear-gradient(#af67e9, #6565e7);
   background-repeat: no-repeat;
-  height: 100vh;
   text-align: center;
 }
 
@@ -47,22 +47,61 @@ button {
   background: none;
   padding: 0;
   width: 100%;
-  font-size: 13px;
-  line-height: 13px;
+  font-size: 0.8125rem;
+  line-height: 0.8125rem;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+@media (min-width: 64em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
 .card {
-  max-width: 327px;
-  margin-top: 148px;
+  max-width: 20.4375rem;
+  margin-top: 9.25rem;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  border-radius: 23px;
-  padding: 132px 24px 48px 24px;
+  border-radius: 1.4375rem;
+  padding: 8.25rem 1.5rem 3rem 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .card {
+    position: relative;
+    max-width: 57.5rem;
+    padding: 4.0625rem 5.9375rem 5.1875rem 29.6875rem;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: -33.25rem -17.3125rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/illustration-woman-online-desktop.svg);
+    background-size: 29.5rem;
+    background-position: -5.25rem 4.375rem;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 .card__hero {
@@ -71,21 +110,33 @@ button:hover {
 
 .card__img {
   position: absolute;
-  top: -241px;
-  right: 19px;
+  top: -15.0625rem;
+  right: 1.1875rem;
 }
 
 .card__imgShadow {
   position: absolute;
-  top: -132px;
-  right: 19px;
+  top: -8.25rem;
+  right: 1.1875rem;
+}
+
+.card__imgBox {
+  position: absolute;
+  top: 8.75rem;
+  right: 45.4375rem;
 }
 
 .card__title {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 2rem;
+  line-height: 2.5rem;
   font-weight: 700;
-  padding-bottom: 11px;
+  padding-bottom: 0.6875rem;
+}
+
+@media (min-width: 64em) {
+  .card__title {
+    text-align: left;
+  }
 }
 
 .card__list {
@@ -93,9 +144,9 @@ button:hover {
 }
 
 .card__listItem {
-  border-bottom: 1px solid #e7e7e9;
-  padding-top: 19px;
-  padding-bottom: 19px;
+  border-bottom: 0.0625rem solid #e7e7e9;
+  padding-top: 1.1875rem;
+  padding-bottom: 1.1875rem;
 }
 
 .card__question {
@@ -109,14 +160,21 @@ button:hover {
       -ms-flex-align: center;
           align-items: center;
   color: #4a4b5e;
-  font-size: 13px;
-  line-height: 13px;
+  font-size: 0.8125rem;
+  line-height: 0.8125rem;
   -webkit-transition: font-weight 150ms ease-in-out;
   transition: font-weight 150ms ease-in-out;
 }
 
+@media (min-width: 64em) {
+  .card__question {
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+  }
+}
+
 .card__question:hover {
-  font-weight: 700;
+  color: #f47c57;
 }
 
 .card__question svg {
@@ -128,15 +186,25 @@ button:hover {
   justify-self: flex-end;
 }
 
+@media (min-width: 64em) {
+  .card__arrow {
+    margin-right: 1.5125rem;
+  }
+}
+
 .card__answer {
   color: #787887;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
   padding-top: 0;
   max-height: 0;
   overflow: hidden;
   -webkit-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
+}
+
+.active-header {
+  font-weight: 700;
 }
 
 .active {
@@ -145,6 +213,6 @@ button:hover {
 }
 
 .show {
-  padding-top: 12px;
+  padding-top: 0.75rem;
 }
 /*# sourceMappingURL=style.css.map */

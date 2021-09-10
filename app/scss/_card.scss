@@ -1,11 +1,36 @@
 .card {
-    max-width: 327px;
-    margin-top: 148px;
+    max-width: 20.4375rem;
+    margin-top: 9.25rem;
     margin-left: auto;
     margin-right: auto;
     background-color: $white;
-    border-radius: 23px;
-    padding: 132px 24px 48px 24px;
+    border-radius: 1.4375rem;
+    padding: 8.25rem 1.5rem 3rem 1.5rem;
+
+    @include breakpoint-up(large) {
+        position: relative;
+        max-width: 57.5rem;
+        padding: 4.0625rem 5.9375rem 5.1875rem 29.6875rem;
+        background-image: url("/images/bg-pattern-desktop.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: -33.25rem -17.3125rem;
+    }
+
+    &::before {
+        @include breakpoint-up(large) {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(/images/illustration-woman-online-desktop.svg);
+            background-size: 29.5rem;
+            background-position: -5.25rem 4.375rem;
+            width: 50%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+    }
 
     &__hero {
         position: relative;
@@ -13,21 +38,31 @@
 
     &__img {
         position: absolute;
-        top: -241px;
-        right: 19px;
+        top: -15.0625rem;
+        right: 1.1875rem;
     }
 
     &__imgShadow {
         position: absolute;
-        top: -132px;
-        right: 19px;
+        top: -8.25rem;
+        right: 1.1875rem;
+    }
+
+    &__imgBox {
+        position: absolute;
+        top: 8.75rem;
+        right: 45.4375rem;
     }
 
     &__title {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 2rem;
+        line-height: 2.5rem;
         font-weight: 700;
-        padding-bottom: 11px;
+        padding-bottom: 0.6875rem;
+
+        @include breakpoint-up(large) {
+            text-align: left;
+        }
     }
 
     &__list {
@@ -35,9 +70,9 @@
     }
 
     &__listItem {
-        border-bottom: 1px solid $lightGrayishBlue;
-        padding-top: 19px;
-        padding-bottom: 19px;
+        border-bottom: 0.0625rem solid $lightGrayishBlue;
+        padding-top: 1.1875rem;
+        padding-bottom: 1.1875rem;
     }
 
     &__question {
@@ -45,12 +80,17 @@
         justify-content: space-between;
         align-items: center;
         color: $veryDarkGrayishBlue;
-        font-size: 13px;
-        line-height: 13px;
+        font-size: 0.8125rem;
+        line-height: 0.8125rem;
         transition: font-weight 150ms ease-in-out;
 
+        @include breakpoint-up(large) {
+            font-size: 0.875rem;
+            line-height: 0.875rem;
+        }
+
         &:hover {
-            font-weight: 700;
+            color: $softRed;
         }
 
         svg {
@@ -60,12 +100,16 @@
 
     &__arrow {
         justify-self: flex-end;
+
+        @include breakpoint-up(large) {
+            margin-right: 1.5125rem;
+        }
     }
 
     &__answer {
         color: $darkGrayishBlue;
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
         padding-top: 0;
         max-height: 0;
         overflow: hidden;
@@ -73,10 +117,14 @@
     }
 }
 
+.active-header {
+    font-weight: 700;
+}
+
 .active {
     transform: rotate(180deg);
 }
 
 .show {
-    padding-top: 12px;
+    padding-top: 0.75rem;
 }
